@@ -6,7 +6,7 @@ Currently, you are only allowed to borrow up to 4x your initial deposit: i.e. 1:
 When the user deposits the initial eth, say 1 eth, they will later pay 3 installments, each occurring every 2 months over a 6 month period, with an additional 3-7% fee. 
 
 ## Workflow Diagram
-![EtherPay Workflow Diagram](https://github.com/virtualworldindustries/BuyNowPayLaterCrypto/blob/main/Diagram(s)/EtherPay%20Workflow.PNG)
+![EtherPay Workflow Diagram](https://github.com/virtualworldindustries/BuyNowPayLaterCrypto/blob/dev-backend/diagram(s)/EtherPay%20Workflow.png)
 
 ### Functionality to be added
 -  `viewBorrowFee`
