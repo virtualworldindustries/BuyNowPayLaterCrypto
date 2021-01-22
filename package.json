@@ -1,0 +1,26 @@
+{
+  "name": "yam",
+  "version": "1.0.0",
+  "description": "STRN protocol repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.0",
+    "@types/jest": "^26.0.14",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^3.1.1",
+    "ethers": "^5.0.17",
+    "ganache-core": "^2.11.2",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.0.40",
+    "dotenv-flow": "^3.2.0",
+    "ethereumjs-abi": "^0.6.8",
+    "ethereumjs-util": "^7.0.4"
+  }
+}

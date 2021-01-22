@@ -1,0 +1,12 @@
+node_modules
+build
+.env
+out
+
+.idea/
+.secret
+.next/
+truffle-config.js
+keys/
+
+.now
