@@ -1,0 +1,285 @@
+{
+  "contractName": "DecentracraftCrafter",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_queryId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rng",
+          "type": "uint256"
+        }
+      ],
+      "name": "__callback",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.15+commit.6a57276f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_queryId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_rng\",\"type\":\"uint256\"}],\"name\":\"__callback\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"setOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"DecentracraftCrafter\",\"methods\":{},\"title\":\"DecentracraftCrafter for crafting NFTs in Decentracraft\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/DecentracraftCrafter.sol\":\"DecentracraftCrafter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/DecentracraftCrafter.sol\":{\"keccak256\":\"0xaf8f89caa824005ad1ed50a9103213459b34ca8cbd54e11a20a1d8421a77bfcf\",\"urls\":[\"bzz-raw://6cc2512ff5ffc1cf3f13b5f21271dc9c709635c1874378b453606aa2d21059fb\",\"dweb:/ipfs/QmVi7KoCLAiSJme6kcQub77pbBV17jaLaJ91FvvKKsKm2A\"]},\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol\":{\"keccak256\":\"0x0338ac9b24fc717e9cbee42c14e20672ebb15d7f875652759261f27e4bb5b061\",\"urls\":[\"bzz-raw://e0fe471ef495a4cfe9aa419e8c67e73168fb7485511f64281555cc707bfcd6ad\",\"dweb:/ipfs/QmbATnPk7vTzSH1vddLeMN8HwERA83RFW2RJxhPURMpr5H\"]},\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/Ownable.sol\":{\"keccak256\":\"0xa6a518b6ba2d81549712b31d163f5ab1b424b2f521388b35834742e4caae73e2\",\"urls\":[\"bzz-raw://00663b7c1276496f47959e8bec06eba4a4823fb76a6e82d2445bad82a5cc5bc9\",\"dweb:/ipfs/QmNVFZpmJ5ePXgjkSbGT5vtngefRJ9VEZsZnDKP3yXu3XQ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.11;\n\nimport \"./Utils/Ownable.sol\";\nimport \"./Utils/IRNGReceiver.sol\";\n\n/**\n    @title DecentracraftCrafter for crafting NFTs in Decentracraft\n    @dev  DecentracraftCrafter\n */\ncontract DecentracraftCrafter is IRNGReceiver, Ownable{\n}\n",
+  "sourcePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/DecentracraftCrafter.sol",
+  "ast": {
+    "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/DecentracraftCrafter.sol",
+    "exportedSymbols": {
+      "DecentracraftCrafter": [
+        771
+      ]
+    },
+    "id": 772,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 764,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/Ownable.sol",
+        "file": "./Utils/Ownable.sol",
+        "id": 765,
+        "nodeType": "ImportDirective",
+        "scope": 772,
+        "sourceUnit": 3298,
+        "src": "26:29:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol",
+        "file": "./Utils/IRNGReceiver.sol",
+        "id": 766,
+        "nodeType": "ImportDirective",
+        "scope": 772,
+        "sourceUnit": 3254,
+        "src": "56:34:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 767,
+              "name": "IRNGReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3253,
+              "src": "231:12:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IRNGReceiver_$3253",
+                "typeString": "contract IRNGReceiver"
+              }
+            },
+            "id": 768,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:12:3"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 769,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3297,
+              "src": "245:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$3297",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 770,
+            "nodeType": "InheritanceSpecifier",
+            "src": "245:7:3"
+          }
+        ],
+        "contractDependencies": [
+          3253,
+          3297
+        ],
+        "contractKind": "contract",
+        "documentation": "@title DecentracraftCrafter for crafting NFTs in Decentracraft\n@dev  DecentracraftCrafter",
+        "fullyImplemented": false,
+        "id": 771,
+        "linearizedBaseContracts": [
+          771,
+          3297,
+          3253
+        ],
+        "name": "DecentracraftCrafter",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 772,
+        "src": "198:57:3"
+      }
+    ],
+    "src": "0:256:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/DecentracraftCrafter.sol",
+    "exportedSymbols": {
+      "DecentracraftCrafter": [
+        771
+      ]
+    },
+    "id": 772,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 764,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/Ownable.sol",
+        "file": "./Utils/Ownable.sol",
+        "id": 765,
+        "nodeType": "ImportDirective",
+        "scope": 772,
+        "sourceUnit": 3298,
+        "src": "26:29:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol",
+        "file": "./Utils/IRNGReceiver.sol",
+        "id": 766,
+        "nodeType": "ImportDirective",
+        "scope": 772,
+        "sourceUnit": 3254,
+        "src": "56:34:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 767,
+              "name": "IRNGReceiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3253,
+              "src": "231:12:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IRNGReceiver_$3253",
+                "typeString": "contract IRNGReceiver"
+              }
+            },
+            "id": 768,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:12:3"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 769,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3297,
+              "src": "245:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$3297",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 770,
+            "nodeType": "InheritanceSpecifier",
+            "src": "245:7:3"
+          }
+        ],
+        "contractDependencies": [
+          3253,
+          3297
+        ],
+        "contractKind": "contract",
+        "documentation": "@title DecentracraftCrafter for crafting NFTs in Decentracraft\n@dev  DecentracraftCrafter",
+        "fullyImplemented": false,
+        "id": 771,
+        "linearizedBaseContracts": [
+          771,
+          3297,
+          3253
+        ],
+        "name": "DecentracraftCrafter",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 772,
+        "src": "198:57:3"
+      }
+    ],
+    "src": "0:256:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.15+commit.6a57276f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-01-22T13:22:51.921Z",
+  "devdoc": {
+    "details": "DecentracraftCrafter",
+    "methods": {},
+    "title": "DecentracraftCrafter for crafting NFTs in Decentracraft"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

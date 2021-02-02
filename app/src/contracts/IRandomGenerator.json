@@ -1,0 +1,253 @@
+{
+  "contractName": "IRandomGenerator",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "generateRandom",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.15+commit.6a57276f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"generateRandom\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Decentracraftworld manager Controls minting process\",\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRandomGenerator.sol\":\"IRandomGenerator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol\":{\"keccak256\":\"0x0338ac9b24fc717e9cbee42c14e20672ebb15d7f875652759261f27e4bb5b061\",\"urls\":[\"bzz-raw://e0fe471ef495a4cfe9aa419e8c67e73168fb7485511f64281555cc707bfcd6ad\",\"dweb:/ipfs/QmbATnPk7vTzSH1vddLeMN8HwERA83RFW2RJxhPURMpr5H\"]},\"/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRandomGenerator.sol\":{\"keccak256\":\"0x9a6364d562578126432d6713ad101128e92965b4b4478c0509464f7c86740c7c\",\"urls\":[\"bzz-raw://5d22df118a43b4ce142f4ebd015e29d77bcb2c826c9e08e8540f104f4fad0023\",\"dweb:/ipfs/QmdmxvS8mxXvpSzmKU5p7S5iAdSGgM5v8w4HCgT922rUUq\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.11;\n\nimport \"./IRNGReceiver.sol\";\n\n/**\n    @dev Decentracraftworld manager\n    Controls minting process\n*/\ninterface IRandomGenerator {\n\n    function generateRandom() external payable returns (bytes32);\n}\n",
+  "sourcePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRandomGenerator.sol",
+  "ast": {
+    "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRandomGenerator.sol",
+    "exportedSymbols": {
+      "IRandomGenerator": [
+        3262
+      ]
+    },
+    "id": 3263,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3255,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol",
+        "file": "./IRNGReceiver.sol",
+        "id": 3256,
+        "nodeType": "ImportDirective",
+        "scope": 3263,
+        "sourceUnit": 3254,
+        "src": "26:28:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@dev Decentracraftworld manager\nControls minting process",
+        "fullyImplemented": false,
+        "id": 3262,
+        "linearizedBaseContracts": [
+          3262
+        ],
+        "name": "IRandomGenerator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3261,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateRandom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3257,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "185:2:14"
+            },
+            "returnParameters": {
+              "id": 3260,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3259,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3261,
+                  "src": "214:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3258,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "213:9:14"
+            },
+            "scope": 3262,
+            "src": "162:61:14",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3263,
+        "src": "128:97:14"
+      }
+    ],
+    "src": "0:226:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRandomGenerator.sol",
+    "exportedSymbols": {
+      "IRandomGenerator": [
+        3262
+      ]
+    },
+    "id": 3263,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3255,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "absolutePath": "/mnt/c/Kiko/MyProjects/Blockchain/Decentraland/decentracraft-contracts/contracts/Utils/IRNGReceiver.sol",
+        "file": "./IRNGReceiver.sol",
+        "id": 3256,
+        "nodeType": "ImportDirective",
+        "scope": 3263,
+        "sourceUnit": 3254,
+        "src": "26:28:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@dev Decentracraftworld manager\nControls minting process",
+        "fullyImplemented": false,
+        "id": 3262,
+        "linearizedBaseContracts": [
+          3262
+        ],
+        "name": "IRandomGenerator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3261,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateRandom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3257,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "185:2:14"
+            },
+            "returnParameters": {
+              "id": 3260,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3259,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3261,
+                  "src": "214:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3258,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "213:9:14"
+            },
+            "scope": 3262,
+            "src": "162:61:14",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3263,
+        "src": "128:97:14"
+      }
+    ],
+    "src": "0:226:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.15+commit.6a57276f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-01-22T13:22:52.007Z",
+  "devdoc": {
+    "details": "Decentracraftworld manager Controls minting process",
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
