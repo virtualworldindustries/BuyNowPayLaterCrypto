@@ -21,5 +21,5 @@ async function deployToken(deployer, network, accounts) {
 
   // let oldnft = await EPDebtNFT.deployed();
   await deployer.deploy(EPDebtNFT);
-  let epdebtnft = await EPDebtNFT.deployed();
+  // let epdebtnft = await EPDebtNFT.deployed();
 }

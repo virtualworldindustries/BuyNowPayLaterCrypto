@@ -6,16 +6,26 @@ import "../../../decentracraft-contracts/contracts/Decentracraft.sol";
 
 contract EPDebtNFT is Decentracraft {
 
-    struct NFTInfo{
-        uint256 gnome;
-        string  name;
-        uint    breedCount;
-        uint256 lastBreedTime;
-        uint256 parent1ID;
-        uint256 parent2ID;
+    struct Installment{
+        uint256 amount;
+        uint256 deadline;
+        bool paid;
     }
 
-    mapping (uint256 => NFTInfo) public nftInfo;
+    struct LoanInfo{
+        uint256 startTime;
+        uint installmentsCount;
+        mapping (uint => Installment) installments;
+        address borrower;
+        address borrowedAsset;
+        uint256 borrowedAmount;
+        uint borrowedAssetType;
+        bool loanFunded;
+        address paymentAsset;
+        uint paymentAssetType;
+    }
+
+    mapping (uint256 => LoanInfo) public loansInfo;
 
     address public crafter;
 
@@ -26,58 +36,77 @@ contract EPDebtNFT is Decentracraft {
         tokenbaseuri = "https://nft-image-service.herokuapp.com/";
     }
 
+    function burn(address account, uint256 id, uint256 amount) public ownerOnly {
+        super.burn(account, id, amount);
+        delete loansInfo[id];
+    }
+
     function setCrafter(address _crafter) public ownerOnly {
         crafter = _crafter;
     }
 
-    function setName(uint256 _id, string memory _name) public {
-        require(msg.sender == nfOwners[_id] || msg.sender == crafter);
-        nftInfo[_id].name = _name;
-    }
-
-    function getName(uint256 _id) public view returns(string memory){
-        return nftInfo[_id].name;
-    }
-
-    function setGnome(uint256 _id, uint256 _gnome) public {
+    function setLoanInfo(uint256 _id, address _borrower, address _borrowedAsset, uint256 _borrowedAmount, uint _borrowedAssetType
+                , address _paymentAsset, uint _paymentAssetType,  uint256[] memory _amounts, uint256[] memory _deadlines) public {
         require(msg.sender == crafter);
-        nftInfo[_id].gnome = _gnome;
-    }
-    
-    function getGnome(uint256 _id) public view returns(uint256){
-        return nftInfo[_id].gnome;
+
+        LoanInfo memory loan = LoanInfo(0, _amounts.length, _borrower, _borrowedAsset, _borrowedAmount, _borrowedAssetType
+                                    , false, _paymentAsset, _paymentAssetType);
+        loansInfo[_id] = loan;
+        for(uint i = 0; i < _amounts.length; i++){
+            loansInfo[_id].installments[i] = Installment(_amounts[i], _deadlines[i], false);
+        }
     }
 
-    function setBreedCount(uint256 _id, uint _breedCount) public {
+    function loanFunded(uint256 _id) public {
         require(msg.sender == crafter);
-        nftInfo[_id].breedCount = _breedCount;
-    }
-    
-    function getBreedCount(uint256 _id) public view returns(uint){
-        return nftInfo[_id].breedCount;
+        loansInfo[_id].loanFunded = true;
+        loansInfo[_id].startTime  = block.timestamp;
     }
 
-    function setLastBreedTime(uint256 _id, uint256 _lastBreedTime) public {
+    function installmentPaid(uint256 _id, uint _installmentIndex) public {
         require(msg.sender == crafter);
-        nftInfo[_id].lastBreedTime = _lastBreedTime;
-    }
-    
-    function getLastBreedTime(uint256 _id) public view returns(uint256){
-        return nftInfo[_id].lastBreedTime;
+        loansInfo[_id].installments[_installmentIndex].paid = true;
     }
 
-    function setParents(uint256 _id, uint256 _parent1ID, uint256 _parent2ID) public {
-        require(msg.sender == crafter);
-        nftInfo[_id].parent1ID = _parent1ID;
-        nftInfo[_id].parent2ID = _parent2ID;
-    }
-    
-    function getParents(uint256 _id) public view returns(uint256 _parent1ID, uint256 _parent2ID){
-        return (nftInfo[_id].parent1ID, nftInfo[_id].parent2ID);
+    function getInstallment(uint256 _id, uint _installmentIndex) public view returns(uint256 amount, uint256 deadline, bool paid){
+        Installment memory installment = loansInfo[_id].installments[_installmentIndex];
+        return (installment.amount, installment.deadline, installment.paid);
     }
 
-    function isParent(uint256 _nft1, uint256 _nft2) public view returns(bool){
-        return (nftInfo[_nft1].parent1ID == _nft2 || nftInfo[_nft1].parent2ID == _nft2);
+    function getStartTime(uint256 _id) public view returns(uint256){
+        return loansInfo[_id].startTime;
+    }
+
+    function getInstallmentsCount(uint256 _id) public view returns(uint){
+        return loansInfo[_id].installmentsCount;
+    }
+
+    function getBorrower(uint256 _id) public view returns(address){
+        return loansInfo[_id].borrower;
+    }
+
+    function getBorrowedAsset(uint256 _id) public view returns(address){
+        return loansInfo[_id].borrowedAsset;
+    }
+
+    function getBorrowedAmount(uint256 _id) public view returns(uint256){
+        return loansInfo[_id].borrowedAmount;
+    }
+
+    function getLoanFunded(uint256 _id) public view returns(bool){
+        return loansInfo[_id].loanFunded;
+    }
+
+    function getPaymentAsset(uint256 _id) public view returns(address){
+        return loansInfo[_id].paymentAsset;
+    }
+
+    function getPaymentAssetType(uint256 _id) public view returns(uint){
+        return loansInfo[_id].paymentAssetType;
+    }
+
+    function getBorrowedAssetType(uint256 _id) public view returns(uint){
+        return loansInfo[_id].borrowedAssetType;
     }
 
 }
