@@ -75,6 +75,123 @@ export default ({ drizzle, drizzleState }) => {
         />
       </div>
 
+      <div className="section">
+        <h2>Fund a Debt Position</h2>
+        <ContractForm drizzle={drizzle} drizzleState={drizzleState} contract="EPDebtCrafter" method="fundLoan"
+        render={({ inputs, inputTypes, state, handleInputChange, handleSubmit }) => (
+          <form onSubmit={handleSubmit}
+          >
+            {inputs.map((input, index) => (
+              <input
+                style={{ width:1000 }}
+                key={input.name}
+                type={"text"}
+                name={input.name}
+                value={state[input.name]}
+                placeholder={input.name}
+                onChange={handleInputChange}
+              />
+            ))}
+            <button
+              key="submit"
+              type="button"
+              // onClick={ handleSubmit }
+              onClick={ async function (){
+                console.log(drizzleState);
+                if (drizzleState.drizzleStatus.initialized) {
+                  console.log("Handling fundLoan");
+                  const txHash = drizzle.contracts.EPDebtCrafter.methods.fundLoan.cacheSend(state._id);
+                  console.log("txHash = " + txHash);
+                }
+              }}
+              style={{  }}
+            >
+              Submit
+            </button>
+          </form>
+
+        )}  
+        />
+      </div>
+      
+      <div className="section">
+        <h2>Pay next installment for a Debt Position</h2>
+        <ContractForm drizzle={drizzle} drizzleState={drizzleState} contract="EPDebtCrafter" method="payNextInstallment"
+        render={({ inputs, inputTypes, state, handleInputChange, handleSubmit }) => (
+          <form onSubmit={handleSubmit}
+          >
+            {inputs.map((input, index) => (
+              <input
+                style={{ width:1000 }}
+                key={input.name}
+                type={"text"}
+                name={input.name}
+                value={state[input.name]}
+                placeholder={input.name}
+                onChange={handleInputChange}
+              />
+            ))}
+            <button
+              key="submit"
+              type="button"
+              // onClick={ handleSubmit }
+              onClick={ async function (){
+                console.log(drizzleState);
+                if (drizzleState.drizzleStatus.initialized) {
+                  console.log("Handling payNextInstallment");
+                  const txHash = drizzle.contracts.EPDebtCrafter.methods.payNextInstallment.cacheSend(state._id);
+                  console.log("txHash = " + txHash);
+                }
+              }}
+              style={{  }}
+            >
+              Submit
+            </button>
+          </form>
+
+        )}  
+        />
+      </div>
+      
+      <div className="section">
+        <h2>Terminate a loan in case borrower missed a deadline</h2>
+        <ContractForm drizzle={drizzle} drizzleState={drizzleState} contract="EPDebtCrafter" method="terminateLoan"
+        render={({ inputs, inputTypes, state, handleInputChange, handleSubmit }) => (
+          <form onSubmit={handleSubmit}
+          >
+            {inputs.map((input, index) => (
+              <input
+                style={{ width:1000 }}
+                key={input.name}
+                type={"text"}
+                name={input.name}
+                value={state[input.name]}
+                placeholder={input.name}
+                onChange={handleInputChange}
+              />
+            ))}
+            <button
+              key="submit"
+              type="button"
+              // onClick={ handleSubmit }
+              onClick={ async function (){
+                console.log(drizzleState);
+                if (drizzleState.drizzleStatus.initialized) {
+                  console.log("Handling terminateLoan");
+                  const txHash = drizzle.contracts.EPDebtCrafter.methods.terminateLoan.cacheSend(state._id);
+                  console.log("txHash = " + txHash);
+                }
+              }}
+              style={{  }}
+            >
+              Submit
+            </button>
+          </form>
+
+        )}  
+        />
+      </div>
+      
     </div>
   );
 };

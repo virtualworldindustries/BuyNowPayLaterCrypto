@@ -10,7 +10,7 @@ const contractEventNotifier = store => next => action => {
   if (action.type === EventActions.EVENT_FIRED) {
     const contract = action.name
     const contractEvent = action.event.event
-    const message = action.event.raw.data;//action.event.returnValues._message
+    const message = action.event.returnValues[3];//action.event.returnValues._message
     //const display = `${contract}(${contractEvent}): ${message}`
     const display = `Debt ID: ${message}`
 

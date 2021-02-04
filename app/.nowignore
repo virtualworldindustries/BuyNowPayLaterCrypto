@@ -1,0 +1,16 @@
+.vscode
+/node_modules
+api/server.js
+keys
+migrations
+test
+.dockerignore
+.env
+.gitignore
+.secret
+compiledsize.js
+Dockerfile
+LICENSE
+packages-microsoft-prod.deb
+README.md
+truffle-config.js
